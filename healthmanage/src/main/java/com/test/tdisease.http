@@ -1,0 +1,6 @@
+GET http://localhost:8080/disease/diseaseAll
+Accept: application/json
+{
+token:"ftp0ib8bdhbkbge1s0spzzwco6ryq1kx
+}
+###
