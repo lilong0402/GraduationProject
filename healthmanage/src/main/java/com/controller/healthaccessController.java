@@ -28,4 +28,9 @@ public  R insertHealthAccess(@RequestBody healthaccessEntity healthaccessEntity)
  Double score = healthaccessService.inserthealthaccess(healthaccessEntity);
  return R.ok().put("score",score);
 }
-@GetM
+@GetMapping("sbrscore")
+public  R selectByUserNameReturnScore(String username){
+  return R.ok().put("score",healthaccessService.selectByUserNameReturnScore(username));
+}
+
+}

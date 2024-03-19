@@ -4,7 +4,7 @@
     border-radius: 2%;
     padding: 10px;
     margin-left: 1%;
-    /* margin-top: 5% */
+    margin-top: 2%
 }
 .m-t-5{
     margin-top: 5%;
@@ -13,7 +13,13 @@
     height: 100%;
     background-color: white;
 }
+.div2{
+    font-size: 50px;
+    text-align: center;
+    color: rgb(140,153,224);
+    font-weight: 1000;
+}
 .tac{
-    height: 100vh;    
+    height: 150vh;    
     background-color: white;
 }

@@ -17,11 +17,14 @@ import { isAuth, getCurDateTime, getCurDate } from "./common/system";
 import App from "./App.vue";
 import Breadcrumb from "@/components/Breadcrumb";
 import leftbar from "@/components/leftBar.vue";
+import heart from "@/components/heart";
+import allscore from "@/components/Allscore";
 
 import FileUpload from "@/components/FileUpload";
 import Editor from "@/components/Editor";
 import aplayer from "vue-aplayer";
 import store from "./store";
+import dataV from "@jiaminghi/data-view";
 
 Vue.config.productionTip = false;
 
@@ -36,12 +39,16 @@ Vue.use(VueResource);
 Vue.use(ElementUI);
 Vue.use(BaiduMap, {});
 Vue.use(VueQuillEditor);
+Vue.use(dataV);
 
 Vue.component("Breadcrumb", Breadcrumb);
 Vue.component("file-upload", FileUpload);
 Vue.component("editor", Editor);
 Vue.component("aplayer", aplayer);
 Vue.component("LeftBat", leftbar);
+Vue.component("Heart", heart);
+Vue.component("Allscore", allscore);
+
 Vue.http.options.root = config.baseUrl;
 Vue.http.headers.common["Token"] = localStorage.getItem("Token");
 Vue.http.interceptors.push(function(request, next) {

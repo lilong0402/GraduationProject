@@ -54,8 +54,8 @@ public class healthaccessServiceImpl implements healthaccessService {
 
  @Override
  public Double selectByUserNameReturnScore(String username) {
-  if (selectByUserNameReturnScore(username) == null) return 0.0;
-  else return selectByUserNameReturnScore(username);
+  if (healthaccessDao.selectByUserNameReturnScore(username) == null) return 0.0;
+  else return healthaccessDao.selectByUserNameReturnScore(username);
  }
 
  private  Double sumScore(healthaccessEntity healthaccessEntity){
@@ -83,6 +83,7 @@ public class healthaccessServiceImpl implements healthaccessService {
   if (healthaccessEntity.getTypename()==null){
    emptyCount--;
   }
+  score=score-emptyCount;
   //计算已输入数据的分数
   score = score/(100.0-emptyCount*10) * 100;
   return score;
@@ -272,4 +273,15 @@ private Double bloodGlucose(Double bloodGlucoseNumber){
   Double score = 0.0;
   String []diseases = disease.split(",");
   for (String diseasea:diseases) {
-   if (diseasea.equals("无")){return 0.0;}
+   if (diseasea.equals("无")){return 0.0;}
+   if (diseasea.contains("心")||diseasea.contains("炎")){
+    score -=10.0;
+   }else if (diseasea.contains("病")){
+    score -=8.0;
+   }else {
+    score -=5.0;
+   }
+  }
+  return score;
+ }
+}

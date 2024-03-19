@@ -16,4 +16,5 @@ public interface healthaccessService {
 
  Double inserthealthaccess(healthaccessEntity healthaccessEntity);
 
- 
+ Double selectByUserNameReturnScore(String username);
+}
